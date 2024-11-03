@@ -3,10 +3,10 @@ import Image from 'next/image'
 import React from 'react'
 
 interface homeCardProps {
-    className: string,
-    img: string,
-    title: string,
-    description: string,
+    className: string
+    img: string
+    title: string
+    description: string
     handleClick: () => void
 }
 const HomeCard = ({className, title, description, img, handleClick} : homeCardProps) => {
@@ -17,7 +17,7 @@ const HomeCard = ({className, title, description, img, handleClick} : homeCardPr
         className={cn("h-full px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[270px] rounded-[14px] cursor-pointer",
             className
         )}
-        onClick={() => {handleClick}}
+        onClick={handleClick}
       >
         <div className='flex-center glassmorphism size-12 rounded-[10px]'>
           <Image src={img} alt='meeting' width={27} height={27}/>

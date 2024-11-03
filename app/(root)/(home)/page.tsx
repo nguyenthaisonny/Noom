@@ -23,7 +23,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <MeetingTypeList></MeetingTypeList>
+      <MeetingTypeList/>
     </section>
   )
 }
