@@ -11,14 +11,17 @@ const Meeting = ({ params: {id} } : { params: { id: string } }) => {
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const {call, isCallLoading} = useGetCallById(id)
-  if(isCallLoading || isLoaded) return <Loader/>
+  console.log('call', isCallLoading);
+  console.log('loaded', isLoaded);
+  
+  if(isCallLoading || !isLoaded) return <Loader/>
 
   return (
     <main className='h-screen w-full'>
       <StreamCall call={call}>
         <StreamTheme>
           {!isSetupComplete ? (
-            <MeetingSetup/>
+            <MeetingSetup setIsSetupComplete={setIsSetupComplete}/>
           ) : ( <MeetingRoom/> )}
         </StreamTheme>
       </StreamCall>
