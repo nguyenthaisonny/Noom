@@ -11,9 +11,6 @@ const Meeting = ({ params: {id} } : { params: { id: string } }) => {
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false)
   const {call, isCallLoading} = useGetCallById(id)
-  console.log('call', isCallLoading);
-  console.log('loaded', isLoaded);
-  
   if(isCallLoading || !isLoaded) return <Loader/>
 
   return (
