@@ -8,7 +8,6 @@ import React, { useEffect, useState } from 'react'
 import MeetingCard from './MeetingCard'
 import Loader from './Loader'
 import { useToast } from '@/hooks/use-toast'
-import { title } from 'process'
 
 const CallList = ({type}: {type: 'upcoming' | 'recordings' | 'ended'}) => {
     const {
@@ -54,6 +53,7 @@ const CallList = ({type}: {type: 'upcoming' | 'recordings' | 'ended'}) => {
             .flatMap((call) => call.recordings)
             setRecordings(recordings);
     } catch (err) {
+        console.log(err);
         toast({
             title: 'try again later'
         })

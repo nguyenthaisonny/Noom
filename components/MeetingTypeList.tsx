@@ -20,7 +20,7 @@ const MeetingTypeList = () => {
     color: string;
     meetingState: MeetingState;
   }
-  const homeCardContents = [
+  const homeCardContents : HomeCardContent[] = [
     {
         title: 'New Meeting',
         description: 'Start an instant meeting',

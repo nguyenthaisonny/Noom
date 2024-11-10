@@ -1,6 +1,6 @@
 'use client'
 import MeetingTypeList from '@/components/MeetingTypeList';
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const Home = () => {
   const now = new Date();
