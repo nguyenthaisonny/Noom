@@ -7,11 +7,12 @@ import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
 import React, { useState } from 'react';
 
-interface MeetingProps {
+// Use Next.js's type inference for dynamic routes
+type MeetingProps = {
   params: {
     id: string;
   };
-}
+};
 
 const Meeting: React.FC<MeetingProps> = ({ params: { id } }) => {
   const { isLoaded } = useUser();
@@ -33,7 +34,7 @@ const Meeting: React.FC<MeetingProps> = ({ params: { id } }) => {
           </StreamTheme>
         </StreamCall>
       ) : (
-        <Loader /> // Or handle missing call differently
+        <Loader />
       )}
     </main>
   );
